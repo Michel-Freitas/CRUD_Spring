@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+    xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Listar</title>
+</head>
+<body>
+    <h3>Listar Usuários</h3>
+    <a href="/usuario/cadastro">Novo Usuário</a>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Nome</td>
+                <td>Login</td>
+                <td>Senha</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each = "user: ${listUser}">
+                <td th:text = "${user.codUser}"></td>
+                <td th:text = "${user.nome}"></td>
+                <td th:text = "${user.usuario}"></td>
+                <td th:text = "${user.senha}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
