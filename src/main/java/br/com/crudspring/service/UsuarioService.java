@@ -44,4 +44,8 @@ public class UsuarioService {
 		
 		return userUpdate;
 	}
+	
+	public void deleteUsuario(Integer id) {	
+		userRepos.deleteById(id);
+	}
 }

@@ -32,7 +32,7 @@
                 <td th:text = "${user.usuario}"></td>
                 <td th:text = "${user.senha}"></td>
                 <td><a th:href="@{/usuario/detalheUsuario/{id}(id=${user.codUser})}">Editar</a></td>
-                <td><a th:href="@{}"></a></td>
+                <td><a th:href="@{/usuario/deleteUsuario/{id}(id=${user.codUser})}">Excluir</a></td>
             </tr>
         </tbody>
     </table>

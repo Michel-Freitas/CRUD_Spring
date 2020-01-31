@@ -56,4 +56,10 @@ public class UsuarioController {
 		return "redirect:/";
 	}
 	
+	@RequestMapping(path = "/deleteUsuario/{id}", method = RequestMethod.GET)
+	public String deleteUsuario(@PathVariable(value = "id") Integer id) {
+		userServi.deleteUsuario(id);
+		return "redirect:/";
+	}
+	
 }
