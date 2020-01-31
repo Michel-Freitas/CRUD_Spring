@@ -21,6 +21,8 @@
                 <td>Nome</td>
                 <td>Login</td>
                 <td>Senha</td>
+                <td>Editar</td>
+                <td>Excluir</td>
             </tr>
         </thead>
         <tbody>
@@ -29,6 +31,8 @@
                 <td th:text = "${user.nome}"></td>
                 <td th:text = "${user.usuario}"></td>
                 <td th:text = "${user.senha}"></td>
+                <td><a th:href="@{/usuario/detalheUsuario/{id}(id=${user.codUser})}">Editar</a></td>
+                <td><a th:href="@{}"></a></td>
             </tr>
         </tbody>
     </table>

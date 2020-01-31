@@ -1,7 +1,6 @@
 package br.com.crudspring.service;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,5 +27,21 @@ public class UsuarioService {
 	
 	public List<Usuario> getListaUsuario(){
 		return userRepos.findAll();
+	}
+	
+	public Usuario getUser(Integer codUser){
+		return userRepos.findById(codUser).get();
+	}
+	
+	public Usuario atualizarUser(Integer id, String nome, String usuario, String senha) {
+		
+		Usuario userUpdate = new Usuario();
+		userUpdate.setCodUser(id);
+		userUpdate.setNome(nome);
+		userUpdate.setSenha(senha);
+		userUpdate.setUsuario(usuario);
+		userRepos.save(userUpdate);
+		
+		return userUpdate;
 	}
 }
